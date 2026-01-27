@@ -36,7 +36,7 @@ class SectionPolicy
      */
     public function update(User $user, Section $section): bool
     {
-        return true;
+        return $user->id === $section->user_id;
     }
 
     /**
@@ -44,7 +44,7 @@ class SectionPolicy
      */
     public function delete(User $user, Section $section): bool
     {
-        return true;
+        return $user->id === $section->user_id;
     }
 
     /**
@@ -52,7 +52,7 @@ class SectionPolicy
      */
     public function restore(User $user, Section $section): bool
     {
-        return true;
+        return $user->id === $section->user_id;
     }
 
     /**
@@ -60,6 +60,6 @@ class SectionPolicy
      */
     public function forceDelete(User $user, Section $section): bool
     {
-        return true;
+        return $user->id === $section->user_id;
     }
 }
