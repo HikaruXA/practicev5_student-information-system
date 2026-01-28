@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AssessmentStoreRequest;
+use App\Http\Requests\AssessmentUpdateRequest;
 use App\Models\Assessment;
-use Illuminate\Http\Request;
 
 class AssessmentController extends Controller
 {
@@ -28,7 +29,7 @@ class AssessmentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(AssessmentStoreRequest $request)
     {
         $validated = $request->validated();
 
@@ -56,7 +57,7 @@ class AssessmentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Assessment $assessment)
+    public function update(AssessmentUpdateRequest $request, Assessment $assessment)
     {
         $validated = $request->validated();
 
