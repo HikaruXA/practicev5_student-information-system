@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SubjectStoreRequest;
+use App\Http\Requests\SubjectUpdateRequest;
 use App\Models\Subject;
-use Illuminate\Http\Request;
 
 class SubjectController extends Controller
 {
@@ -29,7 +30,7 @@ class SubjectController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(SubjectStoreRequest $request)
     {
         $validated = $request->validated();
 
@@ -57,7 +58,7 @@ class SubjectController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Subject $subject)
+    public function update(SubjectUpdateRequest $request, Subject $subject)
     {
         $validated = $request->validated();
 
