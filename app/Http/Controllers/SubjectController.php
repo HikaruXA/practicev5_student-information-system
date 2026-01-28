@@ -52,7 +52,7 @@ class SubjectController extends Controller
      */
     public function edit(Subject $subject)
     {
-        return view('pages.show.edit', compact('subject'));
+        return view('pages.subjects.edit', compact('subject'));
     }
 
     /**
