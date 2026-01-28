@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\SectionController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,4 @@ Route::get('/', function () {
 });
 
 Route::resource('sections', SectionController::class);
+Route::resource('students', StudentController::class);
