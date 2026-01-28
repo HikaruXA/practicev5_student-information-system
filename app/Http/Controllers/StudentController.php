@@ -8,6 +8,11 @@ use App\Models\Student;
 
 class StudentController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Student::class, 'student');
+    }
+
     /**
      * Display a listing of the resource.
      */
