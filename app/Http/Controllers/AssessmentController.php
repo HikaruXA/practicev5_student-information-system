@@ -8,6 +8,11 @@ use App\Models\Assessment;
 
 class AssessmentController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Assessment::class, 'assessment');
+    }
+
     /**
      * Display a listing of the resource.
      */
