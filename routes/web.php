@@ -22,8 +22,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('sections', SectionController::class);
-Route::resource('students', StudentController::class);
-Route::resource('subjects', SubjectController::class);
-Route::resource('assessments', AssessmentController::class);
-Route::resource('grades', GradeController::class);
+Route::middleware('auth')->group(function () {
+    Route::resource('sections', SectionController::class);
+    Route::resource('students', StudentController::class);
+    Route::resource('subjects', SubjectController::class);
+    Route::resource('assessments', AssessmentController::class);
+    Route::resource('grades', GradeController::class);
+});
