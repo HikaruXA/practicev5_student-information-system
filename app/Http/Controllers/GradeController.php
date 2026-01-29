@@ -8,6 +8,11 @@ use App\Models\Grade;
 
 class GradeController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Grade::class, 'grade');
+    }
+
     /**
      * Display a listing of the resource.
      */
