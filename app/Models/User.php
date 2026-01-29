@@ -47,4 +47,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Section::class);
     }
+
+    public function subjects()
+    {
+        return $this->hasMany(Subject::class);
+    }
 }

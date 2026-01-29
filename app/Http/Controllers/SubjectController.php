@@ -18,7 +18,7 @@ class SubjectController extends Controller
      */
     public function index()
     {
-        $subjects = Subject::paginate(10);
+        $subjects = Subject::where('user_id', auth()->user()->id);
 
         return view('pages.subjects.index', compact('subjects'));
     }
@@ -28,7 +28,6 @@ class SubjectController extends Controller
      */
     public function create()
     {
-
         return view('pages.subjects.create');
     }
 
@@ -39,7 +38,7 @@ class SubjectController extends Controller
     {
         $validated = $request->validated();
 
-        Subject::create($validated);
+        auth()->user()->subjects()->create($validated);
 
         return redirect()->route('subjects.index')->with('success', 'Subject created successfully.');
     }
