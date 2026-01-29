@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\GradeStoreRequest;
+use App\Http\Requests\GradeUpdateRequest;
 use App\Models\Grade;
-use Illuminate\Http\Request;
 
 class GradeController extends Controller
 {
@@ -28,7 +29,7 @@ class GradeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(GradeStoreRequest $request)
     {
         $validated = $request->validated();
 
@@ -56,7 +57,7 @@ class GradeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Grade $grade)
+    public function update(GradeUpdateRequest $request, Grade $grade)
     {
         $validated = $request->validated();
 
