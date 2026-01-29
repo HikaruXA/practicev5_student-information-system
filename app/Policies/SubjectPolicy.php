@@ -20,7 +20,7 @@ class SubjectPolicy
      */
     public function view(User $user, Subject $subject): bool
     {
-        return true;
+        return $user->id === $subject->user_id;
     }
 
     /**
@@ -36,7 +36,7 @@ class SubjectPolicy
      */
     public function update(User $user, Subject $subject): bool
     {
-        return true;
+        return $user->id === $subject->user_id;
     }
 
     /**
@@ -44,7 +44,7 @@ class SubjectPolicy
      */
     public function delete(User $user, Subject $subject): bool
     {
-        return true;
+        return $user->id === $subject->user_id;
     }
 
     /**
@@ -52,7 +52,7 @@ class SubjectPolicy
      */
     public function restore(User $user, Subject $subject): bool
     {
-        return true;
+        return $user->id === $subject->user_id;
     }
 
     /**
@@ -60,6 +60,6 @@ class SubjectPolicy
      */
     public function forceDelete(User $user, Subject $subject): bool
     {
-        return true;
+        return $user->id === $subject->user_id;
     }
 }
