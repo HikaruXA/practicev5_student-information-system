@@ -21,7 +21,7 @@ class SectionFactory extends Factory
         $endYear = $startYear + 1;
 
         return [
-            'user_id' => User::factory(),
+            'user_id' => User::inRandomOrder()->value('id'),
             'name' => fake()->sentence(),
             'description' => fake()->paragraph(),
             'school_year' => "{$startYear}-{$endYear}",
