@@ -9,7 +9,9 @@ class Assessment extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['subject_id', 'category_id', 'name'];
+    protected $fillable = ['subject_id', 'category_id', 'name', 'total'];
+
+    protected $casts = ['total' => 'decimal:2'];
 
     public function user()
     {
