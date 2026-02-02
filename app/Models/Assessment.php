@@ -9,7 +9,7 @@ class Assessment extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['subject_id', 'name', 'type', 'weight'];
+    protected $fillable = ['subject_id', 'category_id', 'name'];
 
     public function user()
     {
