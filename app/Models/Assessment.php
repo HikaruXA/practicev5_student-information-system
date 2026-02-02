@@ -10,4 +10,9 @@ class Assessment extends Model
     use HasFactory;
 
     protected $fillable = ['subject_id', 'type', 'weight'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
