@@ -9,10 +9,15 @@ class Assessment extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['subject_id', 'type', 'weight'];
+    protected $fillable = ['subject_id', 'name', 'type', 'weight'];
 
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function subject()
+    {
+        return $this->belongsTo(Subject::class);
     }
 }
